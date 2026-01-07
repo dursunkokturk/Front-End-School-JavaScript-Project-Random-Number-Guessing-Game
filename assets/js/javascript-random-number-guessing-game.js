@@ -27,3 +27,7 @@ Rastgele sayı üretmek için "let rastgeleSayi = Math.floor(Math.random() * 10)
     Doğru sayının ne olduğu kullanıcıya bildirilecektir.
 
 */
+
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+
+console.log(`1-10 Arasi Üretilen Rasgele Sayı : ${randomNumber}`);
