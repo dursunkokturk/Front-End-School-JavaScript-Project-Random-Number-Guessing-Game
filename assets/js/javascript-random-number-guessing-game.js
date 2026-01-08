@@ -30,4 +30,38 @@ Rastgele sayı üretmek için "let rastgeleSayi = Math.floor(Math.random() * 10)
 
 let randomNumber = Math.floor(Math.random() * 10) + 1;
 
-console.log(`1-10 Arasi Üretilen Rasgele Sayı : ${randomNumber}`);
+alert("Sayı Tahmini İçin Toplam 5 Hakkınız Var");
+
+let randomNumbers = {};
+let count = 5;
+
+/* Hak Sayisini Artiriyoruz */
+let i = 5;
+
+rightToEstimate = prompt((i + 1) + ". Hakkınız");
+for (let i = 0; i < count; i--) {
+  count--;
+  console.log(count);
+
+  let numberOfRemainingRights = 5;
+  for(let i = 6;i>numberOfRemainingRights;i--){
+    count--;
+    console.log(count);
+  }
+  if (i===0){
+    console.log("Hakkınız Kalmadı");
+  }
+  alert("Kalan Hak Sayısı" + (i - 1));
+  /*
+  if (randomNumber > rightToEstimate) {
+    console.log("Daha Büyük Sayı Denemelisiniz");
+  } else if (randomNumber < rightToEstimate) {
+    console.log("Daha Küçük Sayı Denemelisiniz");
+  } else if (randomNumber === rightToEstimate) {
+    console.log("Tebrikler Doğru Tahmin");
+    break;
+  }
+  */
+}
+
+// console.log(`1-10 Arasi Üretilen Rasgele Sayı : ${randomNumber}`);
