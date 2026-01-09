@@ -41,9 +41,9 @@ let rightToEstimate;
 while (numberOfRemainingRights > 0) {
 
   /* Kullaniciya Bildiriyoruz */
-  // alert(`Kalan hakkınız: ${numberOfRemainingRights}`);
+  alert(`Kalan hakkınız: ${numberOfRemainingRights}`);
 
-  // rightToEstimate = Number(prompt("1 ile 10 arasında bir sayı tahmin edin:"));
+  rightToEstimate = Number(prompt("1 ile 10 arasında bir sayı tahmin edin:"));
 
   /* Uretilen Sayi Ile Tahmin Edilen Sayi Esit Ise 
     Kullaniciyi Tebrik Ediyoruz */
