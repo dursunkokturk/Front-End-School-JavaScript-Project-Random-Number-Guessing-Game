@@ -28,40 +28,46 @@ Rastgele sayı üretmek için "let rastgeleSayi = Math.floor(Math.random() * 10)
 
 */
 
+/* 1-10 Arasi Rastgele Sayi Uretiyoruz */
 let randomNumber = Math.floor(Math.random() * 10) + 1;
 
-alert("Sayı Tahmini İçin Toplam 5 Hakkınız Var");
+/* Kalan Hak Sayisi */
+let numberOfRemainingRights = 5;
 
-let randomNumbers = {};
-let count = 5;
+/* Tahmin Sayisi */
+let rightToEstimate;
 
-/* Hak Sayisini Artiriyoruz */
-let i = 5;
+/* Kalan Hak Sayisi 0'dan Buyuk Ise */
+while (numberOfRemainingRights > 0) {
 
-rightToEstimate = prompt((i + 1) + ". Hakkınız");
-for (let i = 0; i < count; i--) {
-  count--;
-  console.log(count);
+  /* Kullaniciya Bildiriyoruz */
+  // alert(`Kalan hakkınız: ${numberOfRemainingRights}`);
 
-  let numberOfRemainingRights = 5;
-  for(let i = 6;i>numberOfRemainingRights;i--){
-    count--;
-    console.log(count);
-  }
-  if (i===0){
-    console.log("Hakkınız Kalmadı");
-  }
-  alert("Kalan Hak Sayısı" + (i - 1));
-  /*
-  if (randomNumber > rightToEstimate) {
-    console.log("Daha Büyük Sayı Denemelisiniz");
-  } else if (randomNumber < rightToEstimate) {
-    console.log("Daha Küçük Sayı Denemelisiniz");
-  } else if (randomNumber === rightToEstimate) {
-    console.log("Tebrikler Doğru Tahmin");
+  // rightToEstimate = Number(prompt("1 ile 10 arasında bir sayı tahmin edin:"));
+
+  /* Uretilen Sayi Ile Tahmin Edilen Sayi Esit Ise 
+    Kullaniciyi Tebrik Ediyoruz */
+  /* Uretilen Sayi Tahmin Edilen Sayidan Buyuk Ise 
+    Kullanicidan Daha Buyuk Sayi Girmesini Istiyoruz */
+  /* Uretilen Sayi Tahmin Edilen Sayidan Kucuk Ise 
+    Kullanicidan Daha Kucuk Sayi Girmesini Istiyoruz */
+  if (rightToEstimate === randomNumber) {
+    alert("Tebrikler! Doğru Tahmin Ettiniz.");
     break;
+  } else if (rightToEstimate < randomNumber) {
+    console.log("Daha Büyük Bir Sayı Deneyiniz.");
+  } else {
+    console.log("Daha Küçük Bir Sayı Deneyiniz.");
   }
-  */
+
+  /* Kullaniciya Verilen Haklar Kullanilirken Her Kullanimda
+    Kalan Hak Sayisini Azaltiyoruz */
+  numberOfRemainingRights--;
 }
 
-// console.log(`1-10 Arasi Üretilen Rasgele Sayı : ${randomNumber}`);
+/* Kullanici Hakki Bitimesine Ragmen Dogru Tahmin Islemi Gerceklesmedi Ise
+  Dogru Sayiyi Kullaniciya Gosteriyoruz */
+if (numberOfRemainingRights === 0 && rightToEstimate !== randomNumber) {
+  console.log("Tahmin hakkınız bitti!");
+  console.log(`Doğru sayı: ${randomNumber}`);
+}
